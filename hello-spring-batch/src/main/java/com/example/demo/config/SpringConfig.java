@@ -2,9 +2,12 @@ package com.example.demo.config;
 
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.Step;
+import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
@@ -27,4 +30,11 @@ public class SpringConfig {
 		this.transactionManager = transactionManager;
 	}
 	
+	@Bean
+	public Step helloTaskletStep1 () {
+		return new StepBuilder("helloTasklet1Step",jobRepository)
+				.tasklet(helloTasklet1, transactionManager)
+				.build();
+		
+	}
 }
