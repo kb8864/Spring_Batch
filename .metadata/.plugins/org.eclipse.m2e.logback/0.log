@@ -240,3 +240,6 @@
 2026-05-28 16:19:53,937 [Worker-61: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
 2026-05-28 16:19:53,950 [Worker-61: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
 2026-05-28 16:19:53,953 [Worker-61: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /Users/kounoyuuta/Desktop/workspace/SpringBatch/hello-spring-batch/src/test/resources
+2026-05-28 16:33:04,776 [Worker-77: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2026-05-28 16:33:04,780 [Worker-77: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2026-05-28 16:33:04,782 [Worker-77: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /Users/kounoyuuta/Desktop/workspace/SpringBatch/hello-spring-batch/src/test/resources
