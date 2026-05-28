@@ -1,5 +1,8 @@
 package com.example.demo.config;
 
+import org.springframework.batch.core.job.Job;
+import org.springframework.batch.core.job.builder.JobBuilder;
+import org.springframework.batch.core.job.parameters.RunIdIncrementer;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.Step;
@@ -19,7 +22,7 @@ public class SpringConfig {
 	private final PlatformTransactionManager transactionManager;
 	
 	@Autowired
-	@Qualifier("Tasklet1")
+	@Qualifier("HelloTasklet1")
 	private Tasklet helloTasklet1;
 	
 	public SpringConfig(JobLauncher jobLauncher, JobRepository jobRepository,
@@ -35,6 +38,15 @@ public class SpringConfig {
 		return new StepBuilder("helloTasklet1Step",jobRepository)
 				.tasklet(helloTasklet1, transactionManager)
 				.build();
+		
+	}
+	
+	@Bean
+	public Job helloJob() {
+		return new JobBuilder("helloJob", jobRepository)
+			.incrementer(new RunIdIncrementer())
+			.start(helloTaskletStep1())
+			.build();
 		
 	}
 }
