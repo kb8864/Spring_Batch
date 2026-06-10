@@ -17,7 +17,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 @Configuration
 public class SpringConfig {
 
-	private final JobLauncher jobLauncher;
+//	private final JobLauncher jobLauncher;
 	private final JobRepository jobRepository;
 	private final PlatformTransactionManager transactionManager;
 	
@@ -28,7 +28,7 @@ public class SpringConfig {
 	public SpringConfig(JobLauncher jobLauncher, JobRepository jobRepository,
 			PlatformTransactionManager transactionManager) {
 		
-		this.jobLauncher = jobLauncher;
+//		this.jobLauncher = jobLauncher;
 		this.jobRepository = jobRepository;
 		this.transactionManager = transactionManager;
 	}
@@ -47,6 +47,11 @@ public class SpringConfig {
 			.incrementer(new RunIdIncrementer())
 			.start(helloTaskletStep1())
 			.build();
-		
+	
 	}
+	
+
+	
+	
+	
 }
