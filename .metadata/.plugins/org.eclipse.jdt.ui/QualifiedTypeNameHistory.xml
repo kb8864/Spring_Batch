@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="org.springframework.batch.core.launch.JobLauncher"/>
+    <fullyQualifiedTypeName name="org.springframework.batch.core.repository.JobRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.transaction.PlatformTransactionManager"/>
+    <fullyQualifiedTypeName name="org.springframework.batch.core.step.tasklet.Tasklet"/>
+    <fullyQualifiedTypeName name="org.springframework.batch.infrastructure.repeat.RepeatStatus"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="org.springframework.batch.core.configuration.annotation.StepScope"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
+    <fullyQualifiedTypeName name="org.springframework.batch.core.step.builder.StepBuilder"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.batch.autoconfigure.BatchProperties.Job"/>
+    <fullyQualifiedTypeName name="org.springframework.batch.core.job.builder.JobBuilder"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="java.lang.annotation.Retention"/>
+</qualifiedTypeNameHistroy>
