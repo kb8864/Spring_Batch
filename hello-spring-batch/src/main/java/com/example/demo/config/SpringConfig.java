@@ -2,7 +2,7 @@ package com.example.demo.config;
 
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
-import org.springframework.batch.core.job.parameters.RunIdIncrementer;
+import org.springframework.batch.core.job.parameters.JobParametersValidator;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.Step;
@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
+
+import com.example.demo.validator.HelloJobParametersValidator;
 
 @Configuration
 public class SpringConfig {
@@ -34,6 +36,12 @@ public class SpringConfig {
 	}
 	
 	@Bean
+	public JobParametersValidator JobParametersValidator() {
+	return new HelloJobParametersValidator ();
+		
+	}
+	
+	@Bean
 	public Step helloTaskletStep1 () {
 		return new StepBuilder("helloTasklet1Step",jobRepository)
 				.tasklet(helloTasklet1, transactionManager)
@@ -44,7 +52,8 @@ public class SpringConfig {
 	@Bean
 	public Job helloJob() {
 		return new JobBuilder("helloJob", jobRepository)
-			.incrementer(new RunIdIncrementer())
+			//.incrementer(new RunIdIncrementer())
+			.validator(JobParametersValidator())
 			.start(helloTaskletStep1())
 			.build();
 	
