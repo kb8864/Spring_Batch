@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="リソース名 &apos;hello-spring-batch/src/main/java/com/example/demo/tasklet/helloTasklet1.java&apos; を &apos;HelloTasklet1.java&apos; に変更します" description="リソース &apos;helloTasklet1.java&apos; の名前変更" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/example/demo/tasklet/helloTasklet1.java" name="HelloTasklet1.java" stamp="1779938088125" updateReferences="true"/>
+</session>
