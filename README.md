@@ -6,7 +6,7 @@ CSVファイルからユーザー情報を読み込み、Spring BatchでDBへ登
 
 - Java21
 - Spring Boot4.0.6
-- Spring Batch
+- Spring Batch6.0.3
 - MySQL
 
 ## 処理概要
