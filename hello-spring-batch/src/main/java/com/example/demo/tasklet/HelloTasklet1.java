@@ -4,6 +4,7 @@ import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.StepContribution;
 import org.springframework.batch.core.step.tasklet.Tasklet;
+import org.springframework.batch.infrastructure.item.ExecutionContext;
 import org.springframework.batch.infrastructure.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -23,6 +24,15 @@ public class HelloTasklet1 implements Tasklet{
 				+ "バッチ処理を開始しました");
 		System.out.println("param1の出力結果＝"+ param1);
 		System.out.println("param2の出力結果＝"+ param2);
+		
+		ExecutionContext jobContext = 
+				contribution
+				.getStepExecution()
+				.getJobExecution()
+				.getExecutionContext();//JobExecutionの中にある共有データ保存領域を取りに行っている。
+		jobContext.put("jobKey1","jobValue1");
+				
+
 
 		// TODO 自動生成されたメソッド・スタブ
 		return RepeatStatus.FINISHED;

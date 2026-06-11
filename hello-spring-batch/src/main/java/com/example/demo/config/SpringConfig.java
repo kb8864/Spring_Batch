@@ -26,6 +26,11 @@ public class SpringConfig {
 	@Autowired
 	@Qualifier("HelloTasklet1")
 	private Tasklet helloTasklet1;
+
+	@Autowired
+	@Qualifier("HelloTasklet2")
+	private Tasklet helloTasklet2;
+
 	
 	public SpringConfig(JobLauncher jobLauncher, JobRepository jobRepository,
 			PlatformTransactionManager transactionManager) {
@@ -48,6 +53,16 @@ public class SpringConfig {
 				.build();
 		
 	}
+
+	@Bean
+	public Step helloTaskletStep2 () {
+		return new StepBuilder("helloTasklet2Step",jobRepository)
+				.tasklet(helloTasklet2, transactionManager)
+				.build();
+		
+	}
+	
+	
 	
 	@Bean
 	public Job helloJob() {
@@ -55,6 +70,7 @@ public class SpringConfig {
 			//.incrementer(new RunIdIncrementer())
 			.validator(JobParametersValidator())
 			.start(helloTaskletStep1())
+			.next(helloTaskletStep2())
 			.build();
 	
 	}
