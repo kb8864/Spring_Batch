@@ -9,8 +9,11 @@ import org.springframework.batch.infrastructure.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Component("HelloTasklet2")
 @StepScope
+@Slf4j
 public class HelloTasklet2 implements Tasklet{
 
 	//前のStepで保存した値を
@@ -24,8 +27,8 @@ public class HelloTasklet2 implements Tasklet{
 	public @Nullable RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
 		// TODO 自動生成されたメソッド・スタブ
 		
-		System.out.println("HelloTasklet2");
-		System.out.println("jobValue1の値は" + jobValue1);
+		log.info("HelloTasklet2");
+		log.info("jobValue1={}", jobValue1);
 		
 		return RepeatStatus.FINISHED;
 	}

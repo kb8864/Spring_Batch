@@ -1,0 +1,78 @@
+2026-06-11 15:38:03,120 INFO Starting HelloSpringBatchApplication using Java 21.0.5 with PID 94114 (/Users/kounoyuuta/Desktop/workspace/SpringBatch/hello-spring-batch/target/classes started by kounoyuuta in /Users/kounoyuuta/Desktop/workspace/SpringBatch/hello-spring-batch) 
+2026-06-11 15:38:03,121 INFO No active profile set, falling back to 1 default profile: "default" 
+2026-06-11 15:38:03,353 INFO HikariPool-1 - Starting... 
+2026-06-11 15:38:03,664 INFO HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@9efcd90 
+2026-06-11 15:38:03,665 INFO HikariPool-1 - Start completed. 
+2026-06-11 15:38:04,157 INFO Started HelloSpringBatchApplication in 1.15 seconds (process running for 1.577) 
+2026-06-11 15:38:04,157 INFO Running default command line with: [param1=TEST, param2=8888] 
+2026-06-11 15:38:04,209 INFO 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+2026-06-11 15:38:04,213 ERROR Application run failed 
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$2(SpringApplication.java:799)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:86)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:788)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$0(SpringApplication.java:776)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:776)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:328)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.example.demo.HelloSpringBatchApplication.main(HelloSpringBatchApplication.java:10)
+Caused by: org.springframework.batch.core.launch.JobInstanceAlreadyCompleteException: A job instance already exists and is complete for identifying parameters={JobParameter{name='param1', value=TEST, type=class java.lang.String, identifying=true},JobParameter{name='param2', value=8888, type=class java.lang.String, identifying=true}}.  If you want to run this job again, change the parameters.
+	at org.springframework.batch.core.launch.support.TaskExecutorJobLauncher.createJobExecution(TaskExecutorJobLauncher.java:149)
+	at org.springframework.batch.core.launch.support.TaskExecutorJobLauncher.run(TaskExecutorJobLauncher.java:108)
+	at org.springframework.batch.core.launch.support.SimpleJobOperator.start(SimpleJobOperator.java:201)
+	at org.springframework.batch.core.launch.support.TaskExecutorJobOperator.start(TaskExecutorJobOperator.java:117)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222)
+	at jdk.proxy2/jdk.proxy2.$Proxy59.start(Unknown Source)
+	at org.springframework.boot.batch.autoconfigure.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:190)
+	at org.springframework.boot.batch.autoconfigure.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:174)
+	at org.springframework.boot.batch.autoconfigure.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:154)
+	at org.springframework.boot.batch.autoconfigure.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:149)
+	at org.springframework.boot.batch.autoconfigure.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:143)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$0(SpringApplication.java:788)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:82)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	... 17 common frames omitted
+2026-06-11 15:38:04,215 INFO HikariPool-1 - Shutdown initiated... 
+2026-06-11 15:38:04,223 INFO HikariPool-1 - Shutdown completed. 
+2026-06-11 15:39:35,812 INFO Starting HelloSpringBatchApplication using Java 21.0.5 with PID 94148 (/Users/kounoyuuta/Desktop/workspace/SpringBatch/hello-spring-batch/target/classes started by kounoyuuta in /Users/kounoyuuta/Desktop/workspace/SpringBatch/hello-spring-batch) 
+2026-06-11 15:39:35,813 INFO No active profile set, falling back to 1 default profile: "default" 
+2026-06-11 15:39:36,044 INFO HikariPool-1 - Starting... 
+2026-06-11 15:39:36,274 INFO HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2fd64b11 
+2026-06-11 15:39:36,275 INFO HikariPool-1 - Start completed. 
+2026-06-11 15:39:36,704 INFO Started HelloSpringBatchApplication in 1.004 seconds (process running for 1.43) 
+2026-06-11 15:39:36,704 INFO Running default command line with: [param1=TEST, param2=8989] 
+2026-06-11 15:39:36,783 INFO Job: [SimpleJob: [name=helloJob]] launched with the following parameters: [{JobParameter{name='param1', value=TEST, type=class java.lang.String, identifying=true},JobParameter{name='param2', value=8989, type=class java.lang.String, identifying=true}}] 
+2026-06-11 15:39:36,808 INFO Executing step: [helloTasklet1Step] 
+2026-06-11 15:39:36,825 INFO Hello TaskLet1.バッチ処理を開始しました 
+2026-06-11 15:39:36,825 INFO param1=TEST 
+2026-06-11 15:39:36,825 INFO param2=8989 
+2026-06-11 15:39:36,831 INFO Step: [helloTasklet1Step] executed in 28ms 
+2026-06-11 15:39:36,861 INFO Executing step: [helloTasklet2Step] 
+2026-06-11 15:39:36,863 INFO HelloTasklet2 
+2026-06-11 15:39:36,863 INFO jobValue1=jobValue1 
+2026-06-11 15:39:36,868 INFO Step: [helloTasklet2Step] executed in 10ms 
+2026-06-11 15:39:36,882 INFO Job: [SimpleJob: [name=helloJob]] completed with the following parameters: [{JobParameter{name='param1', value=TEST, type=class java.lang.String, identifying=true},JobParameter{name='param2', value=8989, type=class java.lang.String, identifying=true}}] and the following status: [COMPLETED] in 92ms 
+2026-06-11 15:39:36,884 INFO HikariPool-1 - Shutdown initiated... 
+2026-06-11 15:39:36,887 INFO HikariPool-1 - Shutdown completed. 
